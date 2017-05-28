@@ -16,11 +16,12 @@ There are two parts in this project:
   
   <dt> Part B:</dt>
   <ul>
-  <li>Mask the last 300 pixels on each images and use the saved model from Part A to predict the masked pixels.</li>
-  <li>No training involved in this part.</li>
+  <li>Sample 100 images from test set and mask/remove the last 300 pixels in each image.</li>
+  <li>Use the saved model from Part A to predict the masked pixels.</li>
   </ul>
 </dl>
 
+<br><br/>
 <dl>
 <dt>Result (Part B):</dt>
 </dl>
