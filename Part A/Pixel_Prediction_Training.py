@@ -10,13 +10,13 @@ import matplotlib.pyplot as plt
 from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
-learning_rate = 0.005													# Learning rate for optimizer
-batch_size = 250														# size of mini batch for each training
-number_epochs = 80														# number of desired epochs for training
-number_input = 1														# number of input (1 pixel at a time)
-number_steps = 784														# number of total step (since input is 1, so 784 steps)
-number_classes = 1														# number of class (since it is binary so 1 class)
-number_hidden = 128														# number of hideen layer units
+learning_rate = 0.005							# Learning rate for optimizer
+batch_size = 250							# size of mini batch for each training
+number_epochs = 80							# number of desired epochs for training
+number_input = 1							# number of input (1 pixel at a time)
+number_steps = 784							# number of total step (since input is 1, so 784 steps)
+number_classes = 1							# number of class (since it is binary so 1 class)
+number_hidden = 128							# number of hideen layer units
 train_accuracy = test_accuracy = train_loss = test_loss = np.array([])	# store the details for plotting the graph
 
 
