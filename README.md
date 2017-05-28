@@ -1,2 +1,2 @@
-# Pixel_Prediction
-Predict pixels on masked handwritten digit with RNN 
+# Pixel Prediction
+Predict pixels on masked handwritten digit (MNIST dataset) with RNN 
