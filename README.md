@@ -14,6 +14,6 @@ There are two parts in this project:
 </dl>
 
 Result (Part B):
-![Result](https://drive.google.com/file/d/0B4f3kZkG6kd_bVhRR1RHUmloTjQ/view?usp=sharing)
+![Result](https://www.dropbox.com/s/zc4vujvksonwgc3/Example.png?dl=0)
 
 
