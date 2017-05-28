@@ -14,6 +14,6 @@ There are two parts in this project:
 </dl>
 
 Result (Part B):
-![Result](https://www.dropbox.com/s/zc4vujvksonwgc3/Example.png?dl=0)
+![Result](https://www.dropbox.com/s/zc4vujvksonwgc3/Example.png)
 
 
