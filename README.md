@@ -14,7 +14,7 @@ There are two parts in this project:
 </dl>
 
 Result (Part B):
-<br>
+
 <p align="center"> 
 <img src="https://github.com/ykteh93/Deep_Reinforcement_Learning-Atari/blob/master/MsPacman/Graphs_and_Figure/Plot%20of%20Loss%20Over%201%20million%20Steps.png">
 </p>
