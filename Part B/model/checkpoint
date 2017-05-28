@@ -1,0 +1,2 @@
+model_checkpoint_path: "gru_128"
+all_model_checkpoint_paths: "gru_128"
