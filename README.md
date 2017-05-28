@@ -26,5 +26,5 @@ There are two parts in this project:
 <dt>Result (Part B):</dt>
 </dl>
 <p align="center"> 
-<img src="https://github.com/ykteh93/Deep_Reinforcement_Learning-Atari/blob/master/MsPacman/Graphs_and_Figure/Plot%20of%20Loss%20Over%201%20million%20Steps.png">
+<img src="https://github.com/ykteh93/Pixel_Prediction/blob/master/Part%20B/image/For_README.png">
 </p>
