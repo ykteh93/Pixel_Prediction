@@ -10,10 +10,10 @@ import matplotlib.pyplot as plt
 from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
-number_input = 1			# number of input (1 pixel at a time)
-number_steps = 484			# number of total step (since input is 1, so 784 steps)
-number_classes = 1			# number of class (since it is binary so 1 class)
-number_hidden = 128			# number of hideen layer units
+number_input = 1		# number of input (1 pixel at a time)
+number_steps = 484		# number of total step (since input is 1, so 784 steps)
+number_classes = 1		# number of class (since it is binary so 1 class)
+number_hidden = 128		# number of hideen layer units
 number_test_image = 100		# number of test image to be evaluated
 image_dimension = 28		# size of the image dimension which is 28 x 28
 
@@ -27,7 +27,7 @@ weights = {'out': tf.Variable(tf.truncated_normal([number_hidden, number_classes
 biases = {'out': tf.Variable(tf.truncated_normal([number_classes]))}
 
 ground_truth = tf.placeholder(tf.float32, shape=[None, 784])	# placeholder for original image
-mask = tf.placeholder(tf.float32, shape=[None, 484])			# placeholder for masked image (484 pixels unmasked, 300 pixels masked)
+mask = tf.placeholder(tf.float32, shape=[None, 484])		# placeholder for masked image (484 pixels unmasked, 300 pixels masked)
 
 reshaped_x = tf.reshape(mask, [-1, number_steps, number_input])	# reshaped the masked image into right dimension to be passed into RNN cell
 
