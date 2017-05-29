@@ -107,6 +107,6 @@ with tf.Session() as sess:
 		ax.set_xticks(())
 		ax.set_yticks(())
 		plt.imshow(predicted_image, cmap='Greys')
-		plt.xlabel("Loss: %f" % (loss), fontsize=18)
+		plt.xlabel("Prediction (Loss: %f)" % (loss), fontsize=18)
 
 		plt.savefig('./image/Image %d.png' % (i))
