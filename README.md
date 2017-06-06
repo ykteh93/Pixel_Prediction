@@ -26,5 +26,5 @@ There are two parts in this project:
 <dt>Result (Part B):</dt>
 </dl>
 <p align="center"> 
-<img src="https://github.com/ykteh93/Pixel_Prediction/blob/master/Part%20B/image/For_README.png">
+<img src="https://github.com/ykteh93/Pixel_Prediction/blob/master/Part%20B/image/For_README.png" style="width: 50%; height: 50%"/>
 </p>
