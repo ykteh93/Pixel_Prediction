@@ -82,7 +82,7 @@ with tf.Session() as sess:
 		print("\rSaving Image {}".format(i), end="")
 
 		# plot the first image which is the original image
-		fig = plt.figure(i, figsize=(15, 11))
+		fig            = plt.figure(i, figsize=(15, 11))
 		original_image = images[i, :]
 		original_image = np.reshape(original_image, (image_dimension, image_dimension))
 		ax = plt.subplot(1, 3, 1)
@@ -92,9 +92,9 @@ with tf.Session() as sess:
 		plt.xlabel("Ground Truth", fontsize=18)
 
 		# plot the second image which is the masked image
-		masked_image = np.tile(images[i, :], 1)
+		masked_image          = np.tile(images[i, :], 1)
 		masked_image[484:784] = 0.5
-		masked_image = np.reshape(masked_image, (image_dimension, image_dimension))
+		masked_image          = np.reshape(masked_image, (image_dimension, image_dimension))
 		ax = plt.subplot(1, 3, 2)
 		ax.set_xticks(())
 		ax.set_yticks(())
