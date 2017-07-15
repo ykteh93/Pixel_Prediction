@@ -10,12 +10,12 @@ import matplotlib.pyplot as plt
 from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
-number_input = 1		# number of input (1 pixel at a time)
-number_steps = 484		# number of total step (since input is 1, so 784 steps)
-number_classes = 1		# number of class (since it is binary so 1 class)
-number_hidden = 128		# number of hideen layer units
+number_input      = 1		# number of input (1 pixel at a time)
+number_steps      = 484		# number of total step (since input is 1, so 784 steps)
+number_classes    = 1		# number of class (since it is binary so 1 class)
+number_hidden     = 128		# number of hideen layer units
 number_test_image = 100		# number of test image to be evaluated
-image_dimension = 28		# size of the image dimension which is 28 x 28
+image_dimension   = 28		# size of the image dimension which is 28 x 28
 
 
 # binarize the values of pixels to be either 0 or 1
@@ -24,7 +24,7 @@ def binarize(images, threshold=0.1):
 
 # initialize the weights and biases
 weights = {'out': tf.Variable(tf.truncated_normal([number_hidden, number_classes]))}
-biases = {'out': tf.Variable(tf.truncated_normal([number_classes]))}
+biases  = {'out': tf.Variable(tf.truncated_normal([number_classes]))}
 
 ground_truth = tf.placeholder(tf.float32, shape=[None, 784])	# placeholder for original image
 mask = tf.placeholder(tf.float32, shape=[None, 484])		# placeholder for masked image (484 pixels unmasked, 300 pixels masked)
@@ -33,7 +33,7 @@ reshaped_x = tf.reshape(mask, [-1, number_steps, number_input])	# reshaped maske
 
 # compute the output of the RNN cell states and output with GRU cell
 with tf.variable_scope("encoder"):
-	gru_cell = tf.contrib.rnn.GRUCell(number_hidden)
+	gru_cell        = tf.contrib.rnn.GRUCell(number_hidden)
 	outputs, states = tf.nn.dynamic_rnn(gru_cell, reshaped_x, dtype=tf.float32)
 
 # use the last rnn outputs as input and compute the output of linear layer
@@ -57,9 +57,9 @@ with tf.variable_scope("encoder", reuse=True):
 		predict_outputs, states = tf.nn.dynamic_rnn(gru_cell, reshaped_next_pixel, dtype=tf.float32, initial_state=states)
 
 		linear_layer = tf.matmul(predict_outputs[:, -1, :], weights['out']) + biases['out']
-		prediction = tf.concat([prediction, linear_layer], 1)
+		prediction   = tf.concat([prediction, linear_layer], 1)
 
-		next_pixel = tf.reshape(tf.rint(tf.nn.sigmoid(linear_layer)), [1, 1])
+		next_pixel        = tf.reshape(tf.rint(tf.nn.sigmoid(linear_layer)), [1, 1])
 		incremental_input = tf.concat([incremental_input, next_pixel], 1)
 
 # compute the cross entropy loss between the ground truth and prediction
@@ -73,10 +73,10 @@ with tf.Session() as sess:
 
 	# sample batch of test images and binarize it
 	images, _ = mnist.test.next_batch(number_test_image)
-	images = binarize(images)
+	images    = binarize(images)
 
 	for i in range(number_test_image):
-		im = np.reshape(images[i] , (1,784))
+		im           = np.reshape(images[i] , (1,784))
 		loss, result = sess.run([cross_entropy_loss,incremental_input], feed_dict={ground_truth: im, mask: im[:, 0:484]})
 
 		print("\rSaving Image {}".format(i), end="")
