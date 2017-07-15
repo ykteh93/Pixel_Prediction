@@ -96,7 +96,7 @@ with tf.Session() as sess:
 
 		# evaluate the loss and accuracy from both training and testing set 
 		batch_train_accuracy, batch_train_loss = batch_by_batch_evalution(mnist.train)
-		batch_test_accuracy, batch_test_loss = batch_by_batch_evalution(mnist.test)
+		batch_test_accuracy,  batch_test_loss  = batch_by_batch_evalution(mnist.test)
 
 		# display and store all the result for plotting the graph at the end of training
 		print("Epoch %4d -- Training Loss: %10f -- Testing Loss: %10f -- Train Accuracy: %f -- Test Accuracy: %f" % (epoch, batch_train_loss, batch_test_loss, batch_train_accuracy*100, batch_test_accuracy*100))
