@@ -26,10 +26,9 @@ def binarize(images, threshold=0.1):
 weights = {'out': tf.Variable(tf.truncated_normal([number_hidden, number_classes]))}
 biases  = {'out': tf.Variable(tf.truncated_normal([number_classes]))}
 
-ground_truth = tf.placeholder(tf.float32, shape=[None, 784])	# placeholder for original image
-mask = tf.placeholder(tf.float32, shape=[None, 484])		# placeholder for masked image (484 pixels unmasked, 300 pixels masked)
-
-reshaped_x = tf.reshape(mask, [-1, number_steps, number_input])	# reshaped masked image into right dimension to be passed into RNN cell
+ground_truth = tf.placeholder(tf.float32, shape=[None, 784])	   # placeholder for original image
+mask         = tf.placeholder(tf.float32, shape=[None, 484])	   # placeholder for masked image (484 pixels unmasked, 300 pixels masked)
+reshaped_x   = tf.reshape(mask, [-1, number_steps, number_input])  # reshaped masked image into right dimension to be passed into RNN cell
 
 # compute the output of the RNN cell states and output with GRU cell
 with tf.variable_scope("encoder"):
